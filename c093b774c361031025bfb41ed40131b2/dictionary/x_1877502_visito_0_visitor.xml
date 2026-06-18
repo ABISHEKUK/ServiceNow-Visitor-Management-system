@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="8f6afbf0c3a1031025bfb41ed40131f0" label="Visitor" max_length="40" name="x_1877502_visito_0_visitor" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference"/>
+        <element label="Company Name" max_length="40" name="company_name" type="string"/>
+        <element label="Email" max_length="255" name="email" type="string"/>
+        <element choice="1" label="Purpose of Visit" max_length="40" name="purpose_of_visit" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Vendor Visit" value="Vendor Visit"/>
+                <element inactive_on_update="false" label="Meeting" value="Meeting"/>
+                <element inactive_on_update="false" label="Other" value="Other"/>
+                <element inactive_on_update="false" label="Interview" value="Interview"/>
+                <element inactive_on_update="false" label="Delivery" value="Delivery"/>
+            </choice>
+        </element>
+        <element label="Phone Number" max_length="10" name="phone_number" type="string"/>
+        <element display="true" label="Visitor Name" max_length="40" name="visitor_name" type="string"/>
+        <element label="Visit Date" max_length="40" name="visit_date" type="glide_date"/>
+        <element choice="1" default="Requested" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Completed" value="Completed"/>
+                <element inactive_on_update="false" label="Checked In" value="Checked In"/>
+                <element inactive_on_update="false" label="Requested" value="Requested"/>
+                <element inactive_on_update="false" label="Approved" value="Approved"/>
+            </choice>
+        </element>
+        <element label="Checked In Time" max_length="40" name="checked_in_time" type="glide_date_time"/>
+        <index name="index">
+            <element name="employee_name"/>
+        </index>
+    </element>
+</database>
